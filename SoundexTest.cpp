@@ -11,11 +11,13 @@ public:
 };
 
 TEST_F(SoundexEncoding, retains_sole_letter_of_one_letter_word) {
-	auto encoded = soundex.encode("A");
-	ASSERT_THAT(encoded, Eq("A000"));
+	ASSERT_THAT(soundex.encode("A"), Eq("A000"));
 }
 
 TEST_F(SoundexEncoding, pads_with_zeros_to_ensure_three_digits) {
-	auto encoded = soundex.encode("I");
-	ASSERT_THAT(encoded, Eq("I000"));
+	ASSERT_THAT(soundex.encode("I"), Eq("I000"));
+}
+
+TEST_F(SoundexEncoding, replaces_b_with_digit_1) {
+	ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
 }
