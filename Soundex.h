@@ -41,16 +41,20 @@ private:
 	}
 
 	void encodedTail(string &encoding, const string &word) const {
-		for (auto letter : tail(word)) {
+		for (auto i = 1u; i < word.length(); i++) {
 			if (!isComplete(encoding))
-				encodedLetter(encoding, letter);
+				encodedLetter(encoding, word[i], word[i - 1]);
 		}
 	}
 
-	void encodedLetter(string &encoding, char letter) const {
+	void encodedLetter(string &encoding, char letter, char lastLetter) const {
 		auto digit = encodedDigit(letter);
-		if (digit != NotADigit && digit != lastDigit(encoding))
+		if (digit != NotADigit && (digit != lastDigit(encoding) || isVowel(lastLetter)))
 			encoding += digit;
+	}
+
+	bool isVowel(char letter) const {
+		return string("aeiouy").find(lower(letter)) != string::npos;
 	}
 
 	bool isComplete(const string &word) const {
