@@ -5,6 +5,7 @@ Primeiro exemplo do livro seguindo o livro ['Modern C++ Programming'](http://pra
 O exemplo não está completo! Nem todas as regras foram implementadas.
 (Sinta-se livre para fazer um fork e completá-lo =D)
 
+para compilar e rodar os testes, estou utilizando o [raker](https://github.com/bsouza/raker)
 
 ## American Soundex Rules:
 
