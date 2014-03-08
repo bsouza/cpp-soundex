@@ -1,4 +1,12 @@
-American Soundex Rules:
+# Implementação do algoritimo Soundex em C++
+
+Primeiro exemplo do livro seguindo o livro ['Modern C++ Programming'](http://pragprog.com/book/lotdd/modern-c-programming-with-test-driven-development)
+
+O exemplo não está completo! Nem todas as regras foram implementadas.
+(Sinta-se livre para fazer um fork e completá-lo =D)
+
+
+## American Soundex Rules:
 
 1. Retain the first letter of the name and drop all other 
 occurrences of: a, e, i, o, u, y, h, w.
